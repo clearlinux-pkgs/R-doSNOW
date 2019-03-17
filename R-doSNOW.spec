@@ -4,7 +4,7 @@
 #
 Name     : R-doSNOW
 Version  : 1.0.16
-Release  : 15
+Release  : 16
 URL      : https://cran.r-project.org/src/contrib/doSNOW_1.0.16.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doSNOW_1.0.16.tar.gz
 Summary  : Foreach Parallel Adaptor for the 'snow' Package
@@ -16,7 +16,7 @@ Requires: R-snow
 BuildRequires : R-foreach
 BuildRequires : R-iterators
 BuildRequires : R-snow
-BuildRequires : clr-R-helpers
+BuildRequires : buildreq-R
 
 %description
 the snow package of Tierney, Rossini, Li, and Sevcikova.
@@ -29,11 +29,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1523303047
+export SOURCE_DATE_EPOCH=1552806568
 
 %install
+export SOURCE_DATE_EPOCH=1552806568
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1523303047
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -68,8 +68,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library doSNOW|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  doSNOW || :
 
 
 %files
@@ -95,4 +94,5 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/doSNOW/help/paths.rds
 /usr/lib64/R/library/doSNOW/html/00Index.html
 /usr/lib64/R/library/doSNOW/html/R.css
+/usr/lib64/R/library/doSNOW/tests/doRUnit.R
 /usr/lib64/R/library/doSNOW/unitTests/options.R
