@@ -4,7 +4,7 @@
 #
 Name     : R-doSNOW
 Version  : 1.0.18
-Release  : 22
+Release  : 23
 URL      : https://cran.r-project.org/src/contrib/doSNOW_1.0.18.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doSNOW_1.0.18.tar.gz
 Summary  : Foreach Parallel Adaptor for the 'snow' Package
@@ -17,6 +17,7 @@ BuildRequires : R-foreach
 BuildRequires : R-iterators
 BuildRequires : R-snow
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 the snow package of Tierney, Rossini, Li, and Sevcikova.
@@ -29,10 +30,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1564418360
+export SOURCE_DATE_EPOCH=1571819349
 
 %install
-export SOURCE_DATE_EPOCH=1564418360
+export SOURCE_DATE_EPOCH=1571819349
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
