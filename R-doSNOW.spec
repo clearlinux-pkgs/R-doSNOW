@@ -4,7 +4,7 @@
 #
 Name     : R-doSNOW
 Version  : 1.0.18
-Release  : 26
+Release  : 27
 URL      : https://cran.r-project.org/src/contrib/doSNOW_1.0.18.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doSNOW_1.0.18.tar.gz
 Summary  : Foreach Parallel Adaptor for the 'snow' Package
@@ -17,28 +17,28 @@ BuildRequires : R-foreach
 BuildRequires : R-iterators
 BuildRequires : R-snow
 BuildRequires : buildreq-R
-BuildRequires : util-linux
 
 %description
 the snow package of Tierney, Rossini, Li, and Sevcikova.
 
 %prep
 %setup -q -c -n doSNOW
+cd %{_builddir}/doSNOW
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1571819349
+export SOURCE_DATE_EPOCH=1589576745
 
 %install
-export SOURCE_DATE_EPOCH=1571819349
+export SOURCE_DATE_EPOCH=1589576745
 rm -rf %{buildroot}
 export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
-export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
+export FCFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
+export FFLAGS="$FFLAGS -O3 -flto -fno-semantic-interposition "
 export CXXFLAGS="$CXXFLAGS -O3 -flto -fno-semantic-interposition "
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
