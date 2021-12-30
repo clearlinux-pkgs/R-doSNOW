@@ -4,7 +4,7 @@
 #
 Name     : R-doSNOW
 Version  : 1.0.19
-Release  : 38
+Release  : 39
 URL      : https://cran.r-project.org/src/contrib/doSNOW_1.0.19.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/doSNOW_1.0.19.tar.gz
 Summary  : Foreach Parallel Adaptor for the 'snow' Package
